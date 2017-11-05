@@ -1,0 +1,15 @@
+extends _shared
+
+block body
+	.models
+		h2 Models we work on
+		div
+			span.filter-label Sort By:
+			a(href='/models?sortBy=asc') Ascending
+			span.filter-separator |
+			a(href='/models?sortBy=desc') Descending
+
+		//- Implement sorting here
+
+		for model in models
+			h4= model

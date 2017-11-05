@@ -1,0 +1,14 @@
+extends _shared
+
+block body
+	.reviews
+		h2 Customer reviews
+
+		form(action="/reviews", method="get")
+			.form-group
+				input.form-control(name="search", value=searchTerm type='search', placeholder='Press enter to after search term.')
+
+		for review in reviews
+			blockquote
+				p= review.content
+				footer= review.source

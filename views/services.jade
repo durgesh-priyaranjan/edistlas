@@ -1,0 +1,22 @@
+extends _shared
+
+block body
+	.services
+		h2 Services we provide
+		div
+			span.filter-label Filter By Type:
+			a(href='/services?filter=repair') Repair
+			span.filter-separator |
+			a(href='/services?filter=maintenance') Maintenance
+			span.filter-separator |
+			a(href='/services?filter=cosmetic') Cosmetic
+			span.filter-separator |
+			a(href='/services?filter') Any
+
+		//- Implement filtering here
+
+		for service in services
+			h4= service.job
+			p= service.cost
+			p= service.type
+
